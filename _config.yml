@@ -1,0 +1,81 @@
+name: CloudCannon Documentation
+version: 3.0.3
+url: https://docs.cloudcannon.com
+future: true
+
+author:
+  name: CloudCannon
+  email: support@cloudcannon.com
+
+builds:
+  - Any
+  - Static
+  - Jekyll
+
+plans:
+  - Free
+  - Basic
+  - Agency
+  - Enterprise
+
+hostings:
+  - Any
+  - CloudCannon
+
+collections:
+  overview:
+    title: Overview
+    permalink: /overview/:title/
+    active_prefix: overview
+    output: true
+  syncing:
+    title: File Syncing
+    permalink: /syncing/:title/
+    active_prefix: syncing
+    output: true
+  building:
+    title: Building
+    permalink: /building/:title/
+    active_prefix: building
+    output: true
+  editing:
+    title: Editing
+    permalink: /editing/:title/
+    active_prefix: editing
+    output: true
+  domains:
+    title: Domains
+    permalink: /domains/:title/
+    active_prefix: domains
+    output: true
+  hosting:
+    title: Hosting
+    permalink: /hosting/:title/
+    active_prefix: hosting
+    output: true
+  sharing:
+    title: Sharing
+    permalink: /sharing/:title/
+    active_prefix: sharing
+    output: true
+  ssl:
+    title: SSL
+    permalink: /ssl/:title/
+    active_prefix: ssl
+    output: true
+  authentication:
+    title: Authentication
+    permalink: /authentication/:title/
+    active_prefix: authentication
+    output: true
+  i18n:
+    title: Internationalisation
+    permalink: /i18n/:title/
+    active_prefix: i18n
+    output: true
+
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: docs
