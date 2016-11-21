@@ -44,20 +44,7 @@
 		
 		<a href="https://muut.com/i/vlog-arrol-in/comments/"{{ title }}"" class="muut" type="dynamic" data-show_title="false">Comments</a>
 
-<script>
-$('#my-community').muut({
-  
-  api: {
-    // API key for "vlog-arrol-in"- community
-    key: 'sa8GeOjtXF',
 
-    // generate following on the server side (see below)
-    message: 'MESSAGE',
-    signature: 'SIGNATURE',
-    timestamp: TIMESTAMP
-  }
-})
-</script>
 
 		<script>
 			document.getElementById("open-nav").onclick = function () {
@@ -80,5 +67,19 @@ var message = BASE64(JSON.stringify({})),
     signature = SHA1('zrWcqDeaJk1c3pcI9xFQwe3U' + ' ' + message + ' ' + timestamp)
 
 		</script>
+		<script>
+$('#my-community').muut({
+  
+  api: {
+    // API key for "vlog-arrol-in"- community
+    key: 'sa8GeOjtXF',
+
+    // generate following on the server side (see below)
+    message: 'MESSAGE',
+    signature: 'SIGNATURE',
+    timestamp: TIMESTAMP
+  }
+})
+</script>
 	</body>
 </html>
