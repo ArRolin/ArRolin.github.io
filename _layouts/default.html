@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="generator" content="Jekyll v{{ jekyll.version }}">
 
+		<link rel="stylesheet" href="//cdn.muut.com/1/moot.css">
 		<link rel="stylesheet" href="/css/screen.css">
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400italic,400,300italic,300,700,700italic|Open+Sans:400italic,600italic,700italic,700,600,400|Inconsolata:400,700">
 		<link rel="alternate" type="application/atom+xml" title="Change Log | CloudCannon Documentation" href="/atom/">
@@ -17,6 +18,8 @@
 		<script src="/js/html5shiv.min.js"></script>
 		<script src="/js/respond.min.js"></script>
 		<![endif]-->
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="//cdn.muut.com/1/moot.min.js"></script>
 		{% if page.duplicate_content %}
 			<link rel="canonical" href="{{ page.duplicate_content }}">
 		{% endif %}
@@ -39,12 +42,43 @@
 
 		{{ content }}
 		
-		<a class="muut" href="https://muut.com/i/vlog-arrol-in/comments" type="dynamic">vlog-arrol-in</a> <script src="//cdn.muut.com/1/moot.min.js"></script>
+		<a id="my-community" href="https://muut.com/i/vlog-arrol-in">Community</a>
+
+<script>
+$('#my-community').muut({
+  
+  api: {
+    // API key for "vlog-arrol-in"- community
+    key: 'sa8GeOjtXF',
+
+    // generate following on the server side (see below)
+    message: 'MESSAGE',
+    signature: 'SIGNATURE',
+    timestamp: TIMESTAMP
+  }
+})
+</script>
 
 		<script>
 			document.getElementById("open-nav").onclick = function () {
 				document.body.classList.toggle("nav-open");
 			};
+		</script>
+		<script>
+			function SHA1(str) {
+  var sum = require('crypto').createHash('sha1')
+  sum.update(str)
+  return sum.digest('hex')
+}
+
+function BASE64(str) {
+  return (new Buffer(str)).toString('base64')
+}
+
+var message = BASE64(JSON.stringify({})),
+    timestamp = Math.round(Date.now() / 1000),
+    signature = SHA1('zrWcqDeaJk1c3pcI9xFQwe3U' + ' ' + message + ' ' + timestamp)
+
 		</script>
 	</body>
 </html>
